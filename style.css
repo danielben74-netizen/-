@@ -1,0 +1,105 @@
+:root {
+    /* צבעים חמים */
+    --color-primary: #FF9F1C; /* כתום עמוק */
+    --color-secondary: #FF6B6B; /* אדום-קורל מעודד */
+    --color-background: #FFF0DB; /* קרם בהיר */
+    --color-text: #333333; /* אפור כהה */
+    --color-light: #FFC371; /* כתום בהיר לכפתורים */
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    direction: rtl; /* כיוון ימין-לשמאל לעברית */
+    color: var(--color-text);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--color-secondary);
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: var(--color-primary);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* עיצוב כפתורי הרמה */
+.level-btn {
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.level-btn:hover {
+    background-color: var(--color-light);
+}
+
+/* עיצוב המשפט הראשי */
+.sentence-display {
+    font-size: 44px; /* גופן גדול וברור */
+    font-weight: bold;
+    margin: 50px 0;
+    padding: 20px;
+    color: var(--color-text);
+    min-height: 100px;
+    border-bottom: 3px solid var(--color-light);
+}
+
+/* כפתורי פעולה */
+.controls {
+    margin-bottom: 30px;
+}
+
+.control-btn {
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: opacity 0.2s;
+}
+
+.control-btn:hover {
+    opacity: 0.8;
+}
+
+.primary-btn {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.secondary-btn {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.back-btn {
+    background-color: #AAAAAA;
+    color: white;
+    margin-top: 20px;
+}
