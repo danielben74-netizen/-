@@ -1,91 +1,129 @@
+/* הגדרות גלובליות */
 :root {
-    /* צבעים חמים */
-    --color-primary: #FF9F1C; /* כתום עמוק */
-    --color-secondary: #FF6B6B; /* אדום-קורל מעודד */
-    --color-background: #FFF0DB; /* קרם בהיר */
-    --color-text: #333333; /* אפור כהה */
-    --color-light: #FFC371; /* כתום בהיר לכפתורים */
+    --color-primary: #3f51b5; /* כחול כהה */
+    --color-secondary: #ff9800; /* כתום */
+    --color-background: #f4f7f6; /* אפור בהיר - רקע */
+    --color-text: #333; /* צבע טקסט ראשי */
+    --color-success: #4caf50; /* ירוק - הצלחה */
+    --color-error: #f44336; /* אדום - שגיאה */
+    --font-family-heb: "Arial", "Open Sans Hebrew", sans-serif;
+}
+
+/* איפוס וגופנים */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    font-family: var(--font-family-heb);
     background-color: var(--color-background);
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-    direction: rtl; /* כיוון ימין-לשמאל לעברית */
     color: var(--color-text);
+    text-align: center;
+    direction: rtl; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
-    background-color: #FFFFFF;
+    width: 100%;
+    background-color: white;
     padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: var(--color-secondary);
-    font-size: 28px;
+    color: var(--color-primary);
     margin-bottom: 25px;
+    font-size: 1.8rem;
+    line-height: 1.4;
 }
 
 h2 {
-    color: var(--color-primary);
-    font-size: 20px;
-    margin-bottom: 15px;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
-/* עיצוב כפתורי הרמה */
+/* --- כפתורים כלליים ורמות --- */
+.level-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
 .level-btn {
-    display: block;
-    width: 80%;
-    margin: 15px auto;
-    padding: 15px 10px;
-    font-size: 18px;
+    flex: 1 1 45%; /* גודל הריבוע חזר לגודל המקורי */
+    max-width: 300px;
+    padding: 25px 15px;
+    font-size: 1.2rem;
     font-weight: bold;
     color: white;
-    background-color: var(--color-primary);
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .level-btn:hover {
-    background-color: var(--color-light);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* עיצוב המשפט הראשי */
+/* צבעים ספציפיים לרמות (שוחזר הצבע הירוק המקורי) */
+.level-1 { background-color: #79a64a; } /* ירוק זית בהיר */
+.level-2 { background-color: #ffc107; } /* צהוב עז */
+.level-3 { background-color: #2196f3; } /* כחול בהיר */
+.level-4 { background-color: #9c27b0; } /* סגול */
+
+
+/* --- מסך קריאה --- */
+.level-tag {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    background-color: #eee;
+    border-radius: 6px;
+    display: inline-block;
+}
+
 .sentence-display {
-    font-size: 44px; /* גופן גדול וברור */
-    font-weight: bold;
-    margin: 50px 0;
-    padding: 20px;
-    color: var(--color-text);
-    min-height: 100px;
-    border-bottom: 3px solid var(--color-light);
+    font-size: 2.8rem; /* גודל פונט מעט גדול יותר */
+    font-weight: 700;
+    margin: 40px 0;
+    color: #00796b; /* ירוק-כחול כהה */
+    padding: 25px;
+    background-color: #e0f7fa; /* תכלת בהיר */
+    border-radius: 15px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* כפתורי פעולה */
 .controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     margin-bottom: 30px;
 }
 
 .control-btn {
-    padding: 15px 25px;
-    font-size: 16px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
     font-weight: bold;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin: 0 10px;
-    transition: opacity 0.2s;
-}
-
-.control-btn:hover {
-    opacity: 0.8;
+    transition: background-color 0.2s, opacity 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .primary-btn {
@@ -95,11 +133,102 @@ h2 {
 
 .secondary-btn {
     background-color: var(--color-secondary);
-    color: white;
+    color: var(--color-text);
 }
 
 .back-btn {
-    background-color: #AAAAAA;
-    color: white;
+    background-color: #bdbdbd; /* אפור */
+    color: var(--color-text);
     margin-top: 20px;
+}
+
+.control-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+
+/* --- מצב תרגיל (Quiz) --- */
+.quiz-question {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 30px 0;
+    color: var(--color-primary);
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.quiz-option-btn {
+    padding: 20px;
+    font-size: 1.4rem;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-option-btn:hover:not(:disabled) {
+    background-color: #e8eaf6; /* כחול בהיר מאוד */
+    border-color: var(--color-primary);
+}
+
+.quiz-option-btn.correct {
+    background-color: var(--color-success);
+    color: white;
+    border-color: var(--color-success);
+}
+
+.quiz-option-btn.wrong {
+    background-color: var(--color-error);
+    color: white;
+    border-color: var(--color-error);
+    opacity: 0.8;
+}
+
+.feedback-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    min-height: 40px; 
+}
+
+
+/* --- סרגל התקדמות --- */
+.progress-bar {
+    height: 12px;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    /* הגדרה עבור JS */
+    --progress-width: 0%; 
+}
+
+/* עיצוב פס ההתקדמות בפועל - נשאר עם שימוש ב-::after */
+.progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: var(--progress-width); /* נשלט על ידי JS */
+    background-color: var(--color-primary);
+    border-radius: 6px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* --- עיצוב קרדיט מפתח --- */
+#developer-credit {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #999; 
+    text-align: center;
 }
